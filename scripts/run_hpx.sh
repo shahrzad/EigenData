@@ -28,7 +28,7 @@ rm -rf ${results_dir}/*.dat
 rm -rf ${results_dir}/info_${node}/
 mkdir -p ${results_dir}/info_${node}/hpx_info
 date>> ${results_dir}/info_${node}/date.txt
-cp ${eigendata_dir}/scripts/run.sh ${results_dir}/info_${node}/
+cp ${eigendata_dir}/scripts/run_hpx.sh ${results_dir}/info_${node}/
 cp -r $hpx_log_dir/* ${results_dir}/info_$node/hpx_info
 
 for m_size in ${matrix_sizes[@]}
