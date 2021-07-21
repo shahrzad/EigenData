@@ -19,7 +19,7 @@ hpx_source_dir="/home/sshirzad/src/hpx"
 hpx_build_dir="${hpx_source_dir}/build_release_clang_no_hpxmp_${node}_main"
 hpx_bin_dir="${hpx_build_dir}/bin"
 hpx_log_dir="${hpx_build_dir}/info/"
-results_dir="${eigendata_dir}/results"
+results_dir="${eigendata_dir}/results_hpx"
 
 matrix_sizes=(50 100 500 1000 5000)
 thr=(1 2 3 4 5 6 7 8 10 12 16)
@@ -40,7 +40,7 @@ do
 	
 		export OMP_NUM_THREADS=1
 	
-		~/src/EigenTest/build_hpx/EigenTest ${m_size} 6 --hpx:threads=${th}>>${results_dir}/${node}_hpx-eigentest_${th}_${m_size}.dat
+		~/src/EigenTest/build_hpx/EigenTest ${m_size} 6 --hpx:threads=${th} --hpx:queuing=static-priority>>${results_dir}/${node}_hpx-eigentest_${th}_${m_size}.dat
 		echo "Run for matrix size ${m_size}, on ${th} threads finished"			
 	done
 done

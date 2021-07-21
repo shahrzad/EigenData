@@ -18,10 +18,12 @@ eigendata_dir="/work/sshirzad/repos/EigenData"
 results_dir="${eigendata_dir}/results_openmp"
 
 matrix_sizes=(50 100 500 1000)
+matrix_sizes=(5000)
 thr=(1 2 3 4 5 6 7 8 10 12 16)
 mkdir -p ${results_dir}
 rm -rf ${results_dir}/*.dat
 rm -rf ${results_dir}/info_${node}/
+mkdir -p ${results_dir}/info_${node}/
 date>> ${results_dir}/info_${node}/date.txt
 cp ${eigendata_dir}/scripts/run_openmp.sh ${results_dir}/info_${node}/
 
