@@ -16,7 +16,7 @@ from sklearn.metrics import r2_score
 import blaze_funcs as bf
 
 import matplotlib
-matplotlib.rcParams.update({'font.size': 20})
+# matplotlib.rcParams.update({'font.size': 20})
 
 data_dir='/home/shahrzad/repos/EigenData/data/'
 directories=[data_dir+'hpx', data_dir+'openmp']
@@ -77,13 +77,17 @@ for filename in data_files:
         data[node][matrix_size][th][runtime]=avg
 
 node='medusa'
+plot_dir='/home/shahrzad/repos/EigenData/plots/'
 i=1
 for m in matrix_sizes:    
     plt.figure(i)
+    plt.axes([0, 0, 2, 1])
+
     plt.scatter([th for th in thr if th in data[node][m].keys()],[data[node][m][th]['hpx'] for th in thr if th in data[node][m].keys()],color='blue',label='hpx')
     plt.scatter([th for th in thr if th in data[node][m].keys()],[data[node][m][th]['openmp'] for th in thr if th in data[node][m].keys()],color='red',label='openmp')
     plt.title('matrix size: '+str(int(m)))
     plt.xticks(thr)
-    plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    plt.legend(bbox_to_anchor=(0.78, 0.95), loc=2, borderaxespad=0.)
 
+    plt.savefig(plot_dir+node+'_'+str(int(m))+'_'+str(int(th))+'.png',bbox_inches='tight')
     i=i+1
