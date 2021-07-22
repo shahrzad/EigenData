@@ -1,0 +1,15 @@
+0	status:VmPeak
+1	status:VmSize
+2	status:VmLck
+3	status:VmPin
+4	status:VmHWM
+5	status:VmRSS
+6	status:VmData
+7	status:VmStk
+8	status:VmExe
+9	status:VmLib
+10	status:VmPTE
+11	status:VmSwap
+12	status:Threads
+13	status:voluntary_ctxt_switches
+14	status:nonvoluntary_ctxt_switches

@@ -1,0 +1,17 @@
+9
+23252000
+status:Threads
+status:VmData
+status:VmExe
+status:VmHWM
+status:VmLck
+status:VmLib
+status:VmPTE
+status:VmPeak
+status:VmPin
+status:VmRSS
+status:VmSize
+status:VmStk
+status:VmSwap
+status:nonvoluntary_ctxt_switches
+status:voluntary_ctxt_switches
