@@ -88,6 +88,7 @@ for m in matrix_sizes:
     plt.title('matrix size: '+str(int(m)))
     plt.xticks(thr)
     plt.legend(bbox_to_anchor=(0.78, 0.95), loc=2, borderaxespad=0.)
-
+    plt.xlabel('# threads')
+    plt.ylabel('Execution time($\mu{sec}$)')
     plt.savefig(plot_dir+node+'_'+str(int(m))+'_'+str(int(th))+'.png',bbox_inches='tight')
     i=i+1
